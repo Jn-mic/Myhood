@@ -43,7 +43,7 @@ class Authorities(models.Model):
         return self.name      
 
 class Health(models.Model):
-    logo = models.ImageField(upload_to='heath_logo/')
+    logo = models.ImageField(upload_to='health_logo/')
     neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     name =models.CharField(max_length=100)
     email = models.EmailField()

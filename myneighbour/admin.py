@@ -1,5 +1,5 @@
 from django.contrib import admin
-from __future__ import unicode_literals
+# from __future__ import unicode_literals
 from .models import neighbourhood, Profile, Authorities, Health, Post
 
 # Register your models here.
