@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="background-color: rgb(119, 86, 86); height: 50rem;">
+    <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+      <a href="{% url 'health'%}">
+      <div class="card" style="width: 30rem;height:22rem;">
+        <img class="card-img-top dark" src="{% static 'img/health.jpeg'%}" style="width:34rem;height:28rem;">
+        <div class="centered">
+          <h4 style="color:white; font-size:30px;">Health Services</h4>
+        </div>
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+      <a href="{% url 'authorities'%}">
+      <div class="card" style="width: 30rem;height:22rem;">
+        <img class="card-img-top dark" src="{% static 'img/police.jpeg'%}" style="width:34rem;height:28rem;">
+        <div class="centered">
+          <h4 style="color:rgb(243, 233, 233); font-size:30px;">Authorities</h4>
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dark{
+    filter: brightness(85%);
+  }
+  .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  .card {
+    position: relative;
+    border: 1px solid #333;
+    margin: 2%;
+    overflow: hidden;
+    width: 540px;
+  }
+  .card img {
+    max-width: 100%;
+  
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .card:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    filter: brightness(50%);
+  
+  }
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  
+  }
+  
+  </style>
+  {% endblock %}
+  
