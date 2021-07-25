@@ -17,3 +17,5 @@ def index(request):
         profile =Profile.objects.get(username=current_user)
     except ObjectDoesNotExist:
         return redirect('create-profile')
+
+    return render(request,'index.html')
