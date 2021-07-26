@@ -115,6 +115,7 @@ def post(request):
 
     return render(request,'post.html',{"posts":posts})      
 
+
 @login_required(login_url='/accounts/login/')
 def new_post(request):
     current_user=request.user
@@ -124,12 +125,10 @@ def new_post(request):
         form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             post = form.save(commit = False)
-            post.username = current_user
-            post.neighbourhood = profile.neighbourhood
-            post.avatar = profile.avatar
+            # post.username = current_user
+            # post.neighbourhood = profile.neighbourhood
             post.save()
-
-        return HttpResponseRedirect('/post')
+            return HttpResponseRedirect('/post')
 
     else:
         form = PostForm()

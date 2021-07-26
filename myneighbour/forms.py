@@ -20,4 +20,4 @@ class ProfileForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model=Post
-        exclude=['username','neighbourhood','avatar']
+        fields="__all__"
