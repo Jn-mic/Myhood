@@ -12,3 +12,8 @@ class neighbourhoodTestClass(TestCase):
 
     def tearDown(self):
         neighbourhood.objects.all().delete()
+
+    def save_method(self):
+        self.Langata.save_neighbourhood()
+        myhood=neighbourhood.objects.all()
+        self.assertTrue(len(myhood)>0)
