@@ -9,3 +9,6 @@ class neighbourhoodTestClass(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.Langata,neighbourhood))
+
+    def tearDown(self):
+        neighbourhood.objects.all().delete()
