@@ -1,10 +1,8 @@
 from __future__ import unicode_literals
-import cloudinary
 
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
-from cloudinary.models import CloudinaryField
 import datetime as dt
 from django.db.models import Q
 
@@ -24,8 +22,7 @@ class neighbourhood(models.Model):
         cls.objects.filter(neighbourhood=neighbourhood).delete()
 
 class Profile(models.Model):
-    # photo = models.ImageField(upload_to='profile_pic/')
-    photo = CloudinaryField('profile_pic')
+    photo = models.ImageField(upload_to='profile_pic/')
     description = HTMLField()
     neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     username = models.ForeignKey(User,on_delete=models.CASCADE)
